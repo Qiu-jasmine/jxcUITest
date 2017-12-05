@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Testscan</groupId>
+  <artifactId>testscan</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+ <profiles>
+    <profile>
+    <id>jenkins</id>
+    <properties>
+      <performancetest.webservice.host>117.48.218.169</performancetest.webservice.host>
+      <performancetest.webservice.port>8000</performancetest.webservice.port>
+    </properties>
+  </profile>
+ </profiles>
+ 
+  <dependencies>
+ 
+
+  <dependency>
+  <groupId>com.lazerycode.jmeter</groupId>
+  <artifactId>jmeter-maven-plugin</artifactId>
+  <version>2.0.1</version>
+</dependency>
+
+<dependency>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>xml-maven-plugin</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>2.4.3</version>
+</dependency>
+
+  </dependencies>
+
+<build>
+ <plugins>
+
+  <plugin>
+  <groupId>com.lazerycode.jmeter</groupId>
+  <artifactId>jmeter-maven-plugin</artifactId>
+  <version>1.10.0</version>
+  <executions> 
+       <execution> 
+            <id>jmeter-tests</id> 
+            <phase>verify</phase> 
+            <goals> 
+            <goal>jmeter</goal> 
+            </goals> 
+        </execution> 
+  </executions> 
+  <configuration> 
+    <!--                 
+ 	<testFilesExcluded>
+       <excludeJMeterTestFile>test.jmx</excludeJMeterTestFile>  
+  	</testFilesExcluded>
+    
+    <testFilesIncluded>
+        <jMeterTestFile>test2.jmx</jMeterTestFile>
+    </testFilesIncluded>
+    -->                       
+ 	<suppressJMeterOutput>false</suppressJMeterOutput>
+  	<ignoreResultFailures>true</ignoreResultFailures>
+ 	<reportDir>target/jmeter-reports</reportDir> 
+ 	<jmeterUserProperties> for user properites </jmeterUserProperties> 
+ 
+  </configuration> 
+</plugin>
+ 
+
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>xml-maven-plugin</artifactId>
+  <version>1.0</version>
+
+               <executions>
+                   <execution>
+                   <phase>pre-site</phase>
+                   <goals>
+                       <goal>transform</goal>
+                   </goals>
+                   </execution>
+               </executions>
+               <configuration>
+                   <transformationSets>
+                       <transformationSet>
+                           <dir>${project.build.directory}/jmeter</dir>
+                           <stylesheet>src/test/jmeter.log</stylesheet>
+                           <outputDir>${project.build.directory}/jmeter-results</outputDir>
+                           <fileMappers>
+                               <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+                                   <targetExtension>html</targetExtension>
+                               </fileMapper>
+                           </fileMappers>
+                       </transformationSet>
+                   </transformationSets>
+               </configuration>
+           </plugin>                  
+           
+            <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-clean-plugin</artifactId>
+    <version>2.5</version>
+    <configuration>
+        <filesets>
+            <fileset>
+                <directory>F:/logs</directory>
+            </fileset>
+            <fileset>
+                <directory>../message-test</directory>
+                <includes>
+                    <include>spy.log</include>
+                </includes>
+            </fileset>
+            <fileset>
+                <directory>../message-test/target</directory>
+            </fileset>
+        </filesets>
+    </configuration>
+</plugin>
+ 
+</plugins>
+</build>
+	<name>Ddtech-scan-api-autotest</name>
+</project>

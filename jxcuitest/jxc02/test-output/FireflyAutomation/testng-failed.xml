@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [FireflyAutomation]">
+  <parameter name="data" value="\data\test.properties"/>
+  <parameter name="locator" value="\data\locators.properties"/>
+  <test name="Practice1(failed)">
+    <classes>
+      <class name="dddm.para.Testjxc1">
+        <methods>
+          <include name="startFirefox"/>
+          <include name="release"/>
+          <include name="testArchivesManage"/>
+        </methods>
+      </class> <!-- dddm.para.Testjxc1 -->
+    </classes>
+  </test> <!-- Practice1(failed) -->
+</suite> <!-- Failed suite [FireflyAutomation] -->

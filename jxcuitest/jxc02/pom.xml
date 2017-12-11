@@ -42,7 +42,7 @@
 <!-- </plugins> -->
 <!--  </build>  -->
 
-<!-- java class for testng-->
+<!-- java class for testng 执行java程序-->
 <!-- <build> -->
 <!-- <plugins> -->
 <!-- 	<plugin> -->
@@ -58,6 +58,38 @@
 
 <!-- </build> -->
 
+<!-- multiple threads for testng 多线程并行执行程序-->
+<!-- <build> -->
+<!-- 	<plugins> -->
+<!-- 		<plugin> -->
+<!-- 			<artifactId>maven-surefire-plugin</artifactId> -->
+<!-- 			<version>2.10</version> -->
+<!-- 			<configuration> -->
+<!-- 				<excludes> -->
+<!-- 					<exclude>archivesManageModule/TestNewUnit.java</exclude> -->
+<!-- 					<exclude>archivesManageModule/Test2.java</exclude> -->
+<!-- 				</excludes> -->
+<!-- 				<parallel>methods</parallel>并行处理方法，还有classes，insdents -->
+<!-- 				<threadCount>3</threadCount> -->
+<!-- 				<sureXmlFile> -->
+<!-- 					${project.basedir}/src/test/java/archivesManageModule1/Test3.xml -->
+<!-- 				</sureXmlFile> -->
+<!-- 			</configuration> -->
+<!-- 		</plugin> -->
+<!-- 	</plugins> -->
+<!-- </build> -->
+
+<!--远程仓库引用  -->
+<!-- <repositories> -->
+<!-- 	<repository> -->
+<!-- 		<id>ibiblio</id> -->
+<!-- 		<name>ibiblio</name> -->
+<!-- 		<url>http://www.ibiblio.org/maven/mule/dependencies/maven2</url> -->
+<!-- 		<releases><enabled>true</enabled></releases> -->
+<!-- 		<snapshots><enabled>false</enabled></snapshots> -->
+<!-- 		<layout>default</layout> -->
+<!-- 	</repository> -->
+<!-- </repositories> -->
 
 <!-- <reporting> -->
 <!--     <plugins> -->

@@ -47,7 +47,7 @@ public class Practice2OnTestNG {
 		ffwb.findElement(By.xpath(locator.getValue("username"))).sendKeys(data.getValue("username"));
 		ffwb.findElement(By.xpath(locator.getValue("passwd"))).sendKeys(data.getValue("passwd"));
 		
-		wait.waitForElementPresents(locator.getValue("homepage"));
+		wait.waitForElementPresent(locator.getValue("homepage"));
 		
 		
 	}

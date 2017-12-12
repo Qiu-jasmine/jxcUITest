@@ -7,25 +7,27 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-public class NewUnitPage {
+import pagebuilder.Browsers;
+import pagebuilder.BrowsersType;
+import pagebuilder.Do;
+
+public class TestNewUnit {
 	private WebDriver driver;
-	
-	@FindBy(xpath ="//li[text()='单位设置']")
-	private WebElement unit;
-	
-	@FindBy(xpath ="//span[text()='新建']")
-	private WebElement newUnit;
-	
-	public NewUnitPage(WebDriver driver){
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	private Do du;
+
+	@BeforeClass
+	public void inialize(){
+		Browsers browser = new Browsers(BrowsersType.firefox);
+		driver = browser.driver;
+		du = new Do(driver);
+		driver.manage().window().maximize();
 	}
+	@Test
 	public void newUnit(){
-		newUnit.click();
-	}
-	public void navigateToUnit(String url){
-		driver.get(url);
+		LoginHomepage login = new LoginHomepage();
 	}
 //	public void testArchivesManage(){
 //		//进入单位设置

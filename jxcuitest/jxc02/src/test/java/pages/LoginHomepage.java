@@ -66,24 +66,23 @@ public class LoginHomepage {
 		WebDriverWait wait = new WebDriverWait(ffwb,15);
 		wait.until(ExpectedConditions.urlContains("archivesManage"));
 		System.out.println("跳转到档案管理界面成功");
-
 				
 	}
-	@Test
-	public void testArchivesManage(){
-		//进入单位设置
-		WebElement Unit = ffwb.findElement(By.xpath(locator.getValue("Unit")));
-		Unit.click();
-		WebDriverWait wait2 = new WebDriverWait(ffwb,3);
-		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator.getValue("newUnit"))));
-		//新增单位
-		ffwb.findElement(By.xpath(locator.getValue("newUnit"))).click();
-		WebDriverWait wait1 = new WebDriverWait(ffwb,5);
-		wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator.getValue("unitInfo"))));
-		
-		//新增角色
-		//driver.findElement(By.xpath("//*[@id='contentArea']/section/div[1]/div[1]/span")).click();
-		}
+//	@Test
+//	public void testArchivesManage(){
+//		//进入单位设置
+//		WebElement Unit = ffwb.findElement(By.xpath(locator.getValue("Unit")));
+//		Unit.click();
+//		WebDriverWait wait2 = new WebDriverWait(ffwb,3);
+//		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator.getValue("newUnit"))));
+//		//新增单位
+//		ffwb.findElement(By.xpath(locator.getValue("newUnit"))).click();
+//		WebDriverWait wait1 = new WebDriverWait(ffwb,5);
+//		wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator.getValue("unitInfo"))));
+//		
+//		//新增角色
+//		//driver.findElement(By.xpath("//*[@id='contentArea']/section/div[1]/div[1]/span")).click();
+//		}
 	/*@Test
 	public void testRolemanage(){
 		//登录进销存界面

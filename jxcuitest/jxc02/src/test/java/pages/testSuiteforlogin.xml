@@ -3,11 +3,13 @@
 <parameter name ="locator" value="\data\locators.properties"/>
 	<test name="Practice1" preserve-order="true">
  		<classes>
-			<class name="pages.Testjxc1">
-				<method>
-					<include> name = "testLogin"</include>
-				</method>
-			</class>
+<!-- 			<class name="pages.LoginHomepage"> -->
+<!-- 				<method> -->
+<!-- 					<include> name = "testLogin"</include> -->
+<!-- 				</method> -->
+<!-- 			</class> -->
+		<class> name ="pages.LoginHomepage"</class>
+		<class> name ="archivesManageModule.TestUnitSet"</class>
 		</classes>
 		</test>
 

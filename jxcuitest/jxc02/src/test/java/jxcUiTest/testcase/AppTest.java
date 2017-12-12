@@ -1,4 +1,4 @@
-package jxcUiTest.jxc02;
+package jxcUiTest.testcase;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

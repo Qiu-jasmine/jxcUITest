@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pagebuilder.Wait;
+
 public class UnitSetPage {
 	private WebDriver driver;
 	
@@ -21,14 +23,34 @@ public class UnitSetPage {
 	private WebElement modifyUnit;
 	
 	@FindBy(xpath ="//span[text()='删除']")
-	private WebElement Unit;
+	private WebElement deleteUnit;
+	
+	@FindBy(xpath ="//input[@ng-model='code']")
+	private WebElement unitCode;
+	
+	@FindBy(xpath ="//input[@ng-model='name']")
+	private WebElement unitName;
+	
+	@FindBy(xpath ="//div[text()='保存']")
+	private WebElement unitSubmit;
 	
 	public UnitSetPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	public void newUnit(){
+		Wait wait = new Wait(driver);
 		newUnit.click();
+		wait.waitForElementPresent("unitCode");
+		unitCode.sendKeys("u001");
+		unitName.sendKeys("听");	
+		unitSubmit.click();
+	}
+	public void modifyUnit(){
+		modifyUnit.click();
+	}
+	public void deleteUnit(){
+		deleteUnit.click();
 	}
 	public void navigateToNewUnit(String url){
 		driver.get(url);

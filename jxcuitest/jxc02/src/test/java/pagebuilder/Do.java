@@ -27,11 +27,20 @@ public class Do {
 			//this.waitForElementPresent(locatorname);
 			we = driver.findElement(By.xpath(locatorname));
 	     }catch(NoSuchElementException e){
-		    System.out.println("-----:(-----");
+		    System.out.println("-----:( no this xpath-----");
 	    }
 		return we;
 	}
-	
+	public WebElement whatclassname(String locatorname) {
+		WebElement we=null;
+		try{
+			//this.waitForElementPresent(locatorname);
+			we = driver.findElement(By.className(locatorname));
+	     }catch(NoSuchElementException e){
+		    System.out.println("-----:( no thisclassName-----");
+	    }
+		return we;
+	}
 	public List<WebElement> whats(String locatorname){
 		return driver.findElements(By.xpath(locatorname));
 	}
@@ -51,7 +60,7 @@ public class Do {
 			//this.waitForElementPresent(locatorname);
 			we = driver.findElement(By.cssSelector(locatorname));
 	     }catch(NoSuchElementException e){
-		    System.out.println("-----:(-----");
+		    System.out.println("-----:( no this css-----");
 	    }
 		return we;
 	}

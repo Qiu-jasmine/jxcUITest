@@ -32,8 +32,18 @@ public class ParseProperties {
 		}
 		 
 	 }
+	 public String getValue(String keyname){
+		 value = pro.getProperty(keyname).trim();		 
+		 try {
+			value = new String(value.getBytes("UTF-8"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 return value;
+	 }
 	 
-	 public String getValue(String ffwb){
+/*	 public String getValue(String ffwb){
 		 value = pro.getProperty(ffwb);		 
 		 try {
 			value = new String(value.getBytes("UTF-8"),"UTF-8");
@@ -43,7 +53,7 @@ public class ParseProperties {
 		}
 		 return value;
 	 }
-	
+	*/
 	 public static void main(String[] args) throws IOException{
 		 ParseProperties a = new ParseProperties(System.getProperty("user.dir")+"/tool/test.properties");
 		// ParseProperties a = new ParseProperties("D:\\eclipseworkplace\\learnS\\tool\\test.properties");

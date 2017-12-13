@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="testjxc" duration-ms="12411" started-at="2017-12-12T07:02:46Z" finished-at="2017-12-12T07:02:58Z">
+  <suite name="Default suite" duration-ms="15930" started-at="2017-12-13T10:46:38Z" finished-at="2017-12-13T10:46:54Z">
     <groups>
     </groups>
-    <test name="Practice1" duration-ms="12411" started-at="2017-12-12T07:02:46Z" finished-at="2017-12-12T07:02:58Z">
-      <class name="pages.LoginHomepage">
-        <test-method status="PASS" signature="startFirefox(java.lang.String, java.lang.String)[pri:0, instance:pages.LoginHomepage@548b7f67]" name="startFirefox" is-config="true" duration-ms="7984" started-at="2017-12-12T15:02:46Z" finished-at="2017-12-12T15:02:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[\data\test.properties]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[\data\locators.properties]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="15930" started-at="2017-12-13T10:46:38Z" finished-at="2017-12-13T10:46:54Z">
+      <class name="archivesManageModule.TestLoginforpage4">
+        <test-method status="PASS" signature="inialize()[pri:0, instance:archivesManageModule.TestLoginforpage4@7c0e2abd]" name="inialize" is-config="true" duration-ms="14345" started-at="2017-12-13T18:46:38Z" finished-at="2017-12-13T18:46:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startFirefox -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:pages.LoginHomepage@548b7f67]" name="testLogin" duration-ms="4411" started-at="2017-12-12T15:02:54Z" finished-at="2017-12-12T15:02:58Z">
+        </test-method> <!-- inialize -->
+        <test-method status="FAIL" signature="login()[pri:0, instance:archivesManageModule.TestLoginforpage4@7c0e2abd]" name="login" duration-ms="1563" started-at="2017-12-13T18:46:53Z" finished-at="2017-12-13T18:46:54Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at archivesManageModule.TestLoginforpage4.login(TestLoginforpage4.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-      </class> <!-- pages.LoginHomepage -->
-    </test> <!-- Practice1 -->
-  </suite> <!-- testjxc -->
+        </test-method> <!-- login -->
+      </class> <!-- archivesManageModule.TestLoginforpage4 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
